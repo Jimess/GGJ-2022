@@ -25,7 +25,6 @@ public class ProgressBarManager : MonoBehaviour
     private void FixedUpdate()
     {
         float progress = 1 - ((player.transform.position.y - endingPoint.transform.position.y) / totalDistance);
-        print(progress);
         if (slider.value < progress)
         {
             slider.value = progress;
