@@ -32,7 +32,6 @@ public class CollisionManager : Singleton<CollisionManager>
 
             updateCollisionUI();
 
-
             onCollision?.Invoke();
 
             if (collisions == maxCollisions)
@@ -48,9 +47,9 @@ public class CollisionManager : Singleton<CollisionManager>
         collisionCountText.SetText(collisions.ToString());
     }
 
-    public void resetCount()
+    public void restartCollisionCount()
     {
-        hitObstacles = new List<GameObject>();
+        hitObstacles.Clear();
         collisions = 0;
         updateCollisionUI();
     }
