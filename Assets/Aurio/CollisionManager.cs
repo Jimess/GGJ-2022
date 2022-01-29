@@ -5,6 +5,8 @@ using TMPro;
 
 public class CollisionManager : Singleton<CollisionManager>
 {
+    private List<GameObject> hitObstacles;
+
     public int maxCollisions = 3;
     public int collisions;
 
@@ -15,23 +17,35 @@ public class CollisionManager : Singleton<CollisionManager>
 
     void Start()
     {
+        hitObstacles = new List<GameObject>();
         updateCollisionUI();
     }
 
-    public void countCollision()
+    public void countCollision(GameObject obstacle)
     {
-        collisions++;
+        if (!hitObstacles.Contains(obstacle)) {
+            hitObstacles.Add(obstacle);
 
-        updateCollisionUI();
+            collisions++;
 
-        if (collisions >= maxCollisions)
-        {
-            onMaxCollisions?.Invoke();
+            updateCollisionUI();
+
+            if (collisions == maxCollisions)
+            {
+                onMaxCollisions?.Invoke();
+            }
         }
     }
 
     private void updateCollisionUI()
     {
         collisionCountText.SetText(collisions.ToString());
+    }
+
+    public void resetCount()
+    {
+        hitObstacles = new List<GameObject>();
+        collisions = 0;
+        updateCollisionUI();
     }
 }
