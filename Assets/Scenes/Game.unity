@@ -390,15 +390,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5056015169136954166, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_Mass
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5056015169136954166, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
-      propertyPath: m_LinearDrag
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5056015169136954166, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056015169136954166, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_GravityScale
-      value: 0.9
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 5056015169136954167, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_Material
@@ -418,7 +418,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5056015169176906879, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_LinearDrag
-      value: 0.1
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056015169176906879, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
+      propertyPath: m_GravityScale
+      value: 1.1
       objectReference: {fileID: 0}
     - target: {fileID: 5056015169483389833, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_TagString
@@ -426,15 +430,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5056015169483390068, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_Mass
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5056015169483390068, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
-      propertyPath: m_LinearDrag
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5056015169483390068, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056015169483390068, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_GravityScale
-      value: 0.9
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 5056015169483390069, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_Material
@@ -458,15 +462,15 @@ PrefabInstance:
       objectReference: {fileID: 6200000, guid: fd54c50ec0e32ed4295754ad079d8127, type: 2}
     - target: {fileID: 5056015169703306547, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_Mass
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5056015169703306547, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
-      propertyPath: m_LinearDrag
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5056015169703306547, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056015169703306547, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_GravityScale
-      value: 0.9
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 5056015170112724305, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_TagString
@@ -474,15 +478,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5056015170112724316, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_Mass
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5056015170112724316, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
-      propertyPath: m_LinearDrag
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5056015170112724316, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056015170112724316, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_GravityScale
-      value: 0.9
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 5056015170112724317, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_Material
@@ -506,15 +510,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5056015170244696262, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_Mass
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5056015170244696262, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
-      propertyPath: m_LinearDrag
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5056015170244696262, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056015170244696262, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_GravityScale
-      value: 0.9
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 5056015170244696263, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_Material
@@ -526,15 +530,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5056015170452175868, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_Mass
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5056015170452175868, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
-      propertyPath: m_LinearDrag
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5056015170452175868, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056015170452175868, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_GravityScale
-      value: 0.9
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 5056015170452175869, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_Material
@@ -570,15 +574,15 @@ PrefabInstance:
       objectReference: {fileID: 6200000, guid: fd54c50ec0e32ed4295754ad079d8127, type: 2}
     - target: {fileID: 5056015170566853997, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_Mass
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5056015170566853997, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
-      propertyPath: m_LinearDrag
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5056015170566853997, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056015170566853997, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_GravityScale
-      value: 0.9
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 5056015170566853998, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_TagString
@@ -586,27 +590,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5107388000209051580, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_Mass
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 5107388000209051580, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
-      propertyPath: m_LinearDrag
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5107388000209051580, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 5107388000209051580, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_GravityScale
-      value: 0.9
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 6371163765368162528, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_Mass
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 6371163765368162528, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
-      propertyPath: m_LinearDrag
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6371163765368162528, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
+      propertyPath: m_LinearDrag
+      value: 0.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6371163765368162528, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_GravityScale
-      value: 0.9
+      value: 0.55
       objectReference: {fileID: 0}
     - target: {fileID: 8369659743321317141, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_Material

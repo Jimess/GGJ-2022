@@ -60,6 +60,8 @@ public class FreeFallController : MonoBehaviour
     {
         if (controlsEnabled == false)
         {
+            horizontal = 0f;
+            vertical = 0f;
             return;
         }
 

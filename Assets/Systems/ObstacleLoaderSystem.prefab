@@ -44,10 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e43577bfed4d9d41b12a0fe82bc849e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameBounds: {fileID: 0}
-  steps: 10
-  centerObstacleMarginPercent: 10
-  mobSpawnFrequency: 0
   edgeObstacles:
   - {fileID: 4661670271060728160, guid: 000d251cb75a1e14bbe560ad94fd2dca, type: 3}
   - {fileID: 414533307539731703, guid: 7ac0a6b2169ca374c9a29a96e50689df, type: 3}
@@ -55,4 +51,5 @@ MonoBehaviour:
   centerObstacles:
   - {fileID: 4701160662186813693, guid: f602ad0193578304ab34c5e7ab0cd193, type: 3}
   - {fileID: 8631973021030288164, guid: c70f5f57b7a6cd148a60344a2b65d531, type: 3}
-  mobObstacles: []
+  angelMob: {fileID: 1136445166478926420, guid: 7335e471ac4cd764e8a3b5e508b0e9f3, type: 3}
+  devilMob: {fileID: 2297159422583067442, guid: 3675a18913bd9b3479257b174b5a3ce7, type: 3}
