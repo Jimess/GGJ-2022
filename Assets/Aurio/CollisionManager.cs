@@ -14,6 +14,8 @@ public class CollisionManager : Singleton<CollisionManager>
 
     public delegate void OnMaxCollisions();
     public static OnMaxCollisions onMaxCollisions;
+    public delegate void OnCollision();
+    public static OnCollision onCollision;
 
     void Start()
     {
@@ -29,6 +31,9 @@ public class CollisionManager : Singleton<CollisionManager>
             collisions++;
 
             updateCollisionUI();
+
+
+            onCollision?.Invoke();
 
             if (collisions == maxCollisions)
             {

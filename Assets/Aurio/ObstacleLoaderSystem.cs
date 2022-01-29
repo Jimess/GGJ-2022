@@ -6,11 +6,17 @@ public class ObstacleLoaderSystem : Singleton<ObstacleLoaderSystem>
 {
     public List<GameObject> edgeObstacles; //By default, it's a right edge obstacle
     public List<GameObject> centerObstacles;
-    public List<GameObject> mobObstacles;
+    public GameObject angelMob;
+    public GameObject devilMob;
 
-    public GameObject GetRandomMobObstacle()
+    public GameObject GetAngelMob()
     {
-        return mobObstacles[Random.Range(0, mobObstacles.Count)];
+        return angelMob;
+    }
+
+    public GameObject GetDevilMob()
+    {
+        return devilMob;
     }
 
     public GameObject GetRandomCenterObstacle()
