@@ -7,15 +7,10 @@ public class LevelManager : Singleton<LevelManager>
 {
     [SerializeField] private GameObject playerPrefab;
     [SerializeField] private CinemachineVirtualCamera playerVCam;
+    [SerializeField] private GameObject spawnLocation;
 
     private void Start() {
-        // sukurti player prefab instance jam skirtoje vietoje
-        //GameObject player = Instantiate(playerPrefab, )
-
-        // ijungti jeigu reikia jo controlsus
-
-        // sutvarkyti vCam kad sektu zaideja
-        //playerVCam.targ
+        playerPrefab.transform.position = spawnLocation.transform.position;
 
         //ir paleisti kitus menedzerius jei reikia (PVZ.: progressManager)
         // ProgressManager.Instance.StartCalculatingDistance()
