@@ -8,6 +8,8 @@ public class ObstacleLoaderManager : MonoBehaviour
 
     private ObstacleLoaderSystem obstacleLoaderSystem;
 
+    private string obstacleTag = "Obstacle";
+
     private float centerObstacleMargin;
     private float startingHeight;
     private float stepLength;
@@ -95,10 +97,13 @@ public class ObstacleLoaderManager : MonoBehaviour
 
         GameObject obj = Instantiate(prefab, position, Quaternion.identity, gameBounds.transform);
 
+
         if (!rightSide)
         {
             obj.transform.localScale = new Vector3(-1f, 1f, 1f);
         }
+
+        obj.transform.GetChild(0).gameObject.tag = obstacleTag;
     }
 
     private void spawnCenterObstacle(float height)
@@ -111,5 +116,7 @@ public class ObstacleLoaderManager : MonoBehaviour
 
         GameObject prefab = obstacleLoaderSystem.GetRandomCenterObstacle();
         GameObject obj = Instantiate(prefab, position, rotation, gameBounds.transform);
+
+        obj.transform.GetChild(0).gameObject.tag = obstacleTag;
     }
 }
