@@ -43,13 +43,6 @@ public class CollisionManager : Singleton<CollisionManager>
     {
         collisionCountText.SetText(collisions.ToString());
     }
-        }
-    }
-
-    private void updateCollisionUI()
-    {
-        collisionCountText.SetText(collisions.ToString());
-    }
 
     public void resetCount()
     {
