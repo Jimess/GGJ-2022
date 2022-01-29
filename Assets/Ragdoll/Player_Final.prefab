@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 8967384167986680880}
   - component: {fileID: 5671328263395251353}
   - component: {fileID: 2121409342751783328}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 5782453571079308229}
   - component: {fileID: 8153613548851327196}
   - component: {fileID: 107196071325073255}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -338,7 +338,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5656272988299834192}
   - component: {fileID: 5656272989874848601}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player_Final
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,7 @@ GameObject:
   - component: {fileID: 5656272988681906010}
   - component: {fileID: 5656272988681906014}
   - component: {fileID: 5656272989874848600}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -556,7 +556,7 @@ GameObject:
   - component: {fileID: 5656272988860186642}
   - component: {fileID: 5656272988860186643}
   - component: {fileID: 5656272988860186732}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -715,7 +715,7 @@ GameObject:
   - component: {fileID: 5656272989013423953}
   - component: {fileID: 5656272989013423954}
   - component: {fileID: 5656272989013423958}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -885,7 +885,7 @@ GameObject:
   - component: {fileID: 5656272989233475094}
   - component: {fileID: 5656272989233475095}
   - component: {fileID: 5656272989233475099}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftHand
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1055,7 +1055,7 @@ GameObject:
   - component: {fileID: 5656272989766341603}
   - component: {fileID: 5656272989766341628}
   - component: {fileID: 5656272989766341600}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1225,7 +1225,7 @@ GameObject:
   - component: {fileID: 5656272989894547065}
   - component: {fileID: 5656272989894547066}
   - component: {fileID: 5656272989894547070}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: rightLeg
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1395,7 +1395,7 @@ GameObject:
   - component: {fileID: 5656272990080114248}
   - component: {fileID: 5656272990080114253}
   - component: {fileID: 5656272989874848607}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1565,7 +1565,7 @@ GameObject:
   - component: {fileID: 5656272990225739993}
   - component: {fileID: 5656272990225739994}
   - component: {fileID: 2979200931507280873}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: leftArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
