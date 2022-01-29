@@ -19,12 +19,13 @@ public class ProgressBarManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        totalDistance = Vector2.Distance(startingPoint.transform.position, endingPoint.GetComponent<Rigidbody2D>().transform.position);
+        totalDistance = (startingPoint.transform.position.y - endingPoint.transform.position.y);
     }
 
     private void FixedUpdate()
     {
-        float progress = 1 - Vector2.Distance(player.transform.position, endingPoint.transform.position) / totalDistance;
+        float progress = 1 - ((endingPoint.transform.position.y - player.transform.position.y) / totalDistance);
+        print(progress);
         if (slider.value < progress)
         {
             slider.value = progress;

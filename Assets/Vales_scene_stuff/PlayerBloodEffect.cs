@@ -2,22 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerScriptVALE : MonoBehaviour
+public class PlayerBloodEffect : MonoBehaviour
 {
-
     public GameObject bloodEffect;
     // Start is called before the first frame update
-    void Start()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("Game_bounds"))
         {
-            WorldSpinManager.Instance.Spin();
             Instantiate(bloodEffect, transform.position, Quaternion.identity);
         }
     }

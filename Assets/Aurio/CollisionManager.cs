@@ -33,7 +33,16 @@ public class CollisionManager : Singleton<CollisionManager>
             if (collisions == maxCollisions)
             {
                 onMaxCollisions?.Invoke();
+                WorldSpinManager.Instance.Spin();
             }
+           
+        }
+    }
+
+    private void updateCollisionUI()
+    {
+        collisionCountText.SetText(collisions.ToString());
+    }
         }
     }
 

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 668479736448054322}
   - component: {fileID: 1518950433339052880}
+  - component: {fileID: 8710511935967066127}
   - component: {fileID: 3186106618044713798}
   m_Layer: 0
   m_Name: sprite
@@ -85,6 +86,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &8710511935967066127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4466664162230855379}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd7c437148ba9c3409a5a27d4fb9aaf2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundEffect: {fileID: 2838051830132403881, guid: 7347fe858e4de9748b92815300d053b5, type: 3}
 --- !u!60 &3186106618044713798
 PolygonCollider2D:
   m_ObjectHideFlags: 0
