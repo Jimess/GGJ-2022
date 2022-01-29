@@ -21,7 +21,7 @@ public class CollisionTracker : MonoBehaviour
     {
         if (collision.gameObject.tag == "Obstacle")
         {
-            collisionManager.countCollision();
+            collisionManager?.countCollision();
         }
     }
 }
