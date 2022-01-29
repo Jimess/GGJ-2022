@@ -57,7 +57,9 @@ public class FreeFallController : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        inputDirection = new Vector2(horizontal * horizontalForceModifier, vertical * verticalForceModifier);
+        print("local head up - " + transform.up);
+
+        inputDirection = new Vector2(horizontal * transform.right.x * horizontalForceModifier, vertical * transform.up.y * verticalForceModifier);
     }
 
     private void HandleMovementUpdate()
