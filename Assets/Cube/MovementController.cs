@@ -84,7 +84,7 @@ public class MovementController : MonoBehaviour, IJumpable {
         Sequence seq = DOTween.Sequence();
 
         seq.Append(transform.DOMoveX(transform.position.x + 2f, 1f).SetEase(Ease.InOutBounce));
-        seq.AppendInterval(1f);
+        seq.AppendInterval(1f);`
         seq.Append(transform.DOMoveX(transform.position.x - 2f, 1f).SetEase(Ease.OutCirc));
         seq.Join(GetComponent<SpriteRenderer>().DOColor(Color.black, 1f));
         seq.AppendCallback(() => {

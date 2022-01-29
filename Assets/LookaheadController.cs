@@ -17,7 +17,7 @@ public class LookaheadController : MonoBehaviour
 
     public void CameraMove(Vector2 velocityChange)
     {
-        // GetComponent<CinemachineVirtualCamera>();
+        print(GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView);
     }
 
     // Start is called before the first frame update
