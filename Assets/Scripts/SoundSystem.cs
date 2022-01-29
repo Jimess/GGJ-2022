@@ -7,6 +7,5 @@ public class SoundSystem : PersistentSingleton<SoundSystem>
     public int soundTrackCount = 3;
 
     public void Play() {
-
     }
 }
