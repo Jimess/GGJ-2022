@@ -12,11 +12,6 @@ public class CollisionTracker : MonoBehaviour
         collisionManager = FindObjectOfType<CollisionManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Obstacle")
