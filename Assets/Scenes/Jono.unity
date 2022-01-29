@@ -1017,7 +1017,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1025244840}
-  m_LocalRotation: {x: 0.12218326, y: 0.000000016560204, z: -0.0000000020386541, w: 0.9925076}
+  m_LocalRotation: {x: 0.07437623, y: -0, z: -0, w: 0.9972303}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1048,9 +1048,9 @@ MonoBehaviour:
   m_Follow: {fileID: 1707204639}
   m_Lens:
     FieldOfView: 34
-    OrthographicSize: 5
+    OrthographicSize: 3
     NearClipPlane: 0.3
-    FarClipPlane: 1000
+    FarClipPlane: 10000
     Dutch: 0
     ModeOverride: 0
     LensShift: {x: 0, y: 0}
@@ -1076,6 +1076,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b179421ad0fce541860a458db8b2ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  orthoChangeModifier: 0.1
+  maxOrthoSize: 6
+  orthoChangeIntensity: 0.2
 --- !u!1 &1071805427
 GameObject:
   m_ObjectHideFlags: 0
@@ -1204,7 +1207,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081564217}
-  m_LocalRotation: {x: 0.12218326, y: 0.000000016560204, z: -0.0000000020386541, w: 0.9925076}
+  m_LocalRotation: {x: 0.07437623, y: -0, z: -0, w: 0.9972303}
   m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1277,10 +1280,10 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 10000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2212,9 +2215,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   horizontalForceModifier: 10
-  verticalForceModifier: 3
-  freefallChangeModifier: 0.1
-  maxVelocity: 30
+  verticalForceModifier: 0.1
+  maxVelocity: 15
 --- !u!1 &1775394632
 GameObject:
   m_ObjectHideFlags: 0

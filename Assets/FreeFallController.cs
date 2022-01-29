@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class FreeFallController : MonoBehaviour
 {
-    public float horizontalForceModifier = 1;
-    public float verticalForceModifier = 1;
-    public float freefallChangeModifier = 0.1f;
-    public float maxVelocity = 1;
+    public float horizontalForceModifier;
+    public float verticalForceModifier;
+    public float maxVelocity;
 
     private float horizontal;
     private float vertical;
@@ -34,8 +33,8 @@ public class FreeFallController : MonoBehaviour
     private void FixedUpdate()
     {
         HandleMovementUpdate();
+        onVelocityChange(rigidBody.velocity);
         ClampVelocity();
-        onVelocityChange(inputDirection);
     }
 
     private void HandleInput()
@@ -53,8 +52,6 @@ public class FreeFallController : MonoBehaviour
 
     private void ClampVelocity()
     {
-        Vector2 velocity = rigidBody.velocity;
-        // velocity = new Vector2(velocity.x, velocity.y * freefallChangeModifier);
-        velocity = Vector2.ClampMagnitude(rigidBody.velocity, maxVelocity);
+        rigidBody.velocity = Vector2.ClampMagnitude(rigidBody.velocity, maxVelocity);
     }
 }
