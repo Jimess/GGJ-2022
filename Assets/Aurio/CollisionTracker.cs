@@ -14,6 +14,7 @@ public class CollisionTracker : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        print("collision");
         if (collision.gameObject.tag == "Obstacle")
         {
             collisionManager?.countCollision();
