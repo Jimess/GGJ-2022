@@ -916,7 +916,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &446695823
 Transform:
   m_ObjectHideFlags: 0
@@ -1294,7 +1294,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &673342352
 Transform:
   m_ObjectHideFlags: 0
@@ -1638,7 +1638,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1570353006}
         m_TargetAssemblyTypeName: StartGameUIController, Assembly-CSharp
-        m_MethodName: StartGame
+        m_MethodName: PlayButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2777,7 +2777,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d12575690319a346b790ff6430ce44f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startGamePlayerAnim: {fileID: 1713319940}
 --- !u!1 &1606478823
 GameObject:
   m_ObjectHideFlags: 0
@@ -3083,7 +3082,7 @@ GameObject:
   - component: {fileID: 1892653546}
   - component: {fileID: 1892653547}
   m_Layer: 0
-  m_Name: LevelManager
+  m_Name: MenuManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3116,6 +3115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6a61800b815a9d43b2b60e71f939a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startGamePlayerAnim: {fileID: 1713319940}
 --- !u!1 &1919679903
 GameObject:
   m_ObjectHideFlags: 0
@@ -3133,7 +3133,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1919679904
 Transform:
   m_ObjectHideFlags: 0
