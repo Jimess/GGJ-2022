@@ -69,6 +69,7 @@ public class FreeFallController : MonoBehaviour
 
     private void ClampVelocity()
     {
-        rigidBody.velocity = Vector2.ClampMagnitude(rigidBody.velocity, maxVelocity);
+        //rigidBody.velocity = Vector2.ClampMagnitude(rigidBody.velocity, maxVelocity);
+        rigidBody.velocity = new Vector2(rigidBody.velocity.x, Mathf.Clamp(rigidBody.velocity.y, -maxVelocity, maxVelocity));
     }
 }

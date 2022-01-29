@@ -132,4 +132,11 @@ public class ObstacleLoaderManager : MonoBehaviour
 
         obj.transform.GetChild(0).gameObject.tag = obstacleTag;
     }
+
+    //private void OnDrawGizmosSelected() {
+    //    float newCenterObstacleMargin = gameBounds.size.x * centerObstacleMarginPercent / 100;
+
+    //    Gizmos.color = Color.red;
+    //    Gizmos.DrawWireCube(transform.position, new Vector3(gameBounds.size.x - (gameBounds.size.x / 2 - newCenterObstacleMargin), gameBounds.size.y, 0));
+    //}
 }

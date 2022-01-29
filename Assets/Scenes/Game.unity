@@ -321,8 +321,12 @@ PrefabInstance:
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1442134497, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
+      propertyPath: verticalForceModifier
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1442134497, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: horizontalForceModifier
-      value: 150
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 1751733012600518536, guid: 6d7c9e8888f02dd489afcb3177340bc4, type: 3}
       propertyPath: m_TagString
@@ -2064,5 +2068,9 @@ PrefabInstance:
       propertyPath: gameBounds
       value: 
       objectReference: {fileID: 1525313866}
+    - target: {fileID: 466001208601882798, guid: 6ebe763fcc47fcd479b90a0cd9e0b41b, type: 3}
+      propertyPath: centerObstacleMarginPercent
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ebe763fcc47fcd479b90a0cd9e0b41b, type: 3}

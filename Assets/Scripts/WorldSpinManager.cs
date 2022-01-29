@@ -12,6 +12,7 @@ public class WorldSpinManager : Singleton<WorldSpinManager>
     {
         SpinCamera();
         ChangeGravity();
+        restartCollisionCount();
     }
 
     private void SpinCamera()
@@ -23,6 +24,11 @@ public class WorldSpinManager : Singleton<WorldSpinManager>
     private void ChangeGravity()
     {
         DOTween.To(() => Physics2D.gravity.y, newGravity => Physics2D.gravity = new Vector2(0, newGravity), -Physics2D.gravity.y, 2f).SetEase(Ease.InOutQuint);
+    }
+
+    private void restartCollisionCount()
+    {
+        CollisionManager.Instance.restartCollisionCount();
     }
 
 }
