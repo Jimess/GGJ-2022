@@ -10,6 +10,8 @@ public class ObstacleLoaderManager : MonoBehaviour
     private ObstacleLoaderSystem obstacleLoaderSystem;
 
     private string obstacleTag = "Obstacle";
+    private float ObstacleMarginHeightPercent = 5f;
+    float marginHeight;
 
     private float centerObstacleMargin;
     private float startingHeight;
@@ -28,9 +30,10 @@ public class ObstacleLoaderManager : MonoBehaviour
 
         centerObstacleMargin = gameBounds.size.x * centerObstacleMarginPercent / 100;
 
-        //Leave 5% of level length start and end empty
-        startingHeight = gameBounds.transform.position.y + gameBounds.size.y / 2 - gameBounds.size.y * 0.05f;
-        stepLength = gameBounds.size.y * 0.9f / steps;
+        marginHeight = gameBounds.size.y * ObstacleMarginHeightPercent / 100;
+
+        startingHeight = gameBounds.transform.position.y + gameBounds.size.y / 2 - marginHeight;
+        stepLength = (gameBounds.size.y - marginHeight * 2) / steps;
 
         loadObstacles();
     }
@@ -88,10 +91,10 @@ public class ObstacleLoaderManager : MonoBehaviour
                     break;
             }
 
-            //TODO Spawn Mobs
-            while (mobSpawnStep[0] == i)
+            while (mobSpawnStep.Count > 0 && mobSpawnStep[0] == i)
             {
                 spawnMob(obstacleHeight);
+                mobSpawnStep.RemoveAt(0);
             }
 
             obstacleHeight -= stepLength;
@@ -133,10 +136,32 @@ public class ObstacleLoaderManager : MonoBehaviour
         obj.transform.GetChild(0).gameObject.tag = obstacleTag;
     }
 
-    //private void OnDrawGizmosSelected() {
-    //    float newCenterObstacleMargin = gameBounds.size.x * centerObstacleMarginPercent / 100;
+    private void spawnMob(float height)
+    {
+        float maxDistanceFromCenter = (gameBounds.size.x / 2 - centerObstacleMargin);
+        float xPosition = Random.Range(gameBounds.transform.position.x - maxDistanceFromCenter, gameBounds.transform.position.x + maxDistanceFromCenter);
+        Vector3 position = new Vector3(xPosition, height);
 
-    //    Gizmos.color = Color.red;
-    //    Gizmos.DrawWireCube(transform.position, new Vector3(gameBounds.size.x - (gameBounds.size.x / 2 - newCenterObstacleMargin), gameBounds.size.y, 0));
-    //}
+        GameObject prefab;
+
+        if (isAngelMob)
+            prefab = obstacleLoaderSystem.GetAngelMob();
+        else
+            prefab = obstacleLoaderSystem.GetDevilMob();
+
+        GameObject obj = Instantiate(prefab, position, Quaternion.identity, gameBounds.transform);
+    }
+
+    public void transformMobs()
+    {
+        //Transform angels to devils and vise versa
+    }
+
+    private void OnDrawGizmosSelected() {
+        float newCenterObstacleMargin = gameBounds.size.x * centerObstacleMarginPercent / 100;
+        float newMarginHeight = gameBounds.size.y * ObstacleMarginHeightPercent / 100;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(gameBounds.transform.position, new Vector3(gameBounds.size.x - newCenterObstacleMargin, gameBounds.size.y - newMarginHeight * 2, 0));
+    }
 }
