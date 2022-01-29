@@ -14,7 +14,7 @@ public class ObstacleLoaderManager : MonoBehaviour
 
     [Header("Number of times the obstacles are spawned")]
     public int steps = 10;
-    [Header("How far away from the edge a center obstacle has to be. % of gameBounds width")]
+    [Header("How far away from the edge a center obstacle has to be")]
     public int centerObstacleMarginPercent = 10;
     public int mobSpawnFrequency = 0;
 
@@ -26,7 +26,7 @@ public class ObstacleLoaderManager : MonoBehaviour
         centerObstacleMargin = gameBounds.size.x / centerObstacleMarginPercent;
 
         //Leave 5% of level length start and end empty
-        startingHeight = gameBounds.transform.position.y - gameBounds.size.y * 0.05f;
+        startingHeight = gameBounds.transform.position.y + gameBounds.size.y / 2 - gameBounds.size.y * 0.05f;
         stepLength = gameBounds.size.y * 0.9f / steps;
 
         loadObstacles();
@@ -57,6 +57,19 @@ public class ObstacleLoaderManager : MonoBehaviour
                     spawnEdgeObstacle(obstacleHeight, false);
                     break;
                 case 2:
+                    spawnCenterObstacle(obstacleHeight);
+                    break;
+                case 3:
+                    spawnEdgeObstacle(obstacleHeight, false);
+                    spawnEdgeObstacle(obstacleHeight, true);
+                    break;
+                case 4:
+                    spawnEdgeObstacle(obstacleHeight, Random.Range(0,2) == 1);
+                    spawnCenterObstacle(obstacleHeight);
+                    break;
+                case 5:
+                    spawnEdgeObstacle(obstacleHeight, false);
+                    spawnEdgeObstacle(obstacleHeight, true);
                     spawnCenterObstacle(obstacleHeight);
                     break;
                 default:
