@@ -17,6 +17,21 @@ public class FreeFallController : MonoBehaviour
     public delegate void OnVelocityChange(Vector2 velocityChange);
     public static OnVelocityChange onVelocityChange;
 
+    private void Awake()
+    {
+        MobOnCollisionTrigger.onCollision += PostCollisionVelocityChange;
+    }
+
+    private void OnDestroy()
+    {
+        MobOnCollisionTrigger.onCollision -= PostCollisionVelocityChange;
+    }
+
+    public void PostCollisionVelocityChange(IMob collisionMob)
+    {
+        rigidBody.AddForce(new Vector2(0, collisionMob.GetSpeedAdjustment()));
+    }
+
     // Start is called before the first frame update
     void Start()
     {
