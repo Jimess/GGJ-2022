@@ -6,8 +6,6 @@ public class PlayerScriptVALE : MonoBehaviour
 {
 
     public GameObject bloodEffect;
-
-    public GameObject GroundEffect;
     // Start is called before the first frame update
     void Start()
     {
