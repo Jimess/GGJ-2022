@@ -2068,5 +2068,9 @@ PrefabInstance:
       propertyPath: gameBounds
       value: 
       objectReference: {fileID: 1525313866}
+    - target: {fileID: 466001208601882798, guid: 6ebe763fcc47fcd479b90a0cd9e0b41b, type: 3}
+      propertyPath: centerObstacleMarginPercent
+      value: 20
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6ebe763fcc47fcd479b90a0cd9e0b41b, type: 3}
