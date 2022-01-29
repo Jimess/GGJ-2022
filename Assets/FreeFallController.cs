@@ -66,7 +66,7 @@ public class FreeFallController : MonoBehaviour
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
 
-        inputDirection = new Vector2(horizontal * transform.right.x * horizontalForceModifier, vertical * transform.up.y * verticalForceModifier);
+        inputDirection = new Vector2(horizontal * horizontalForceModifier, vertical * verticalForceModifier);
     }
 
     private void HandleMovementUpdate()
@@ -81,8 +81,11 @@ public class FreeFallController : MonoBehaviour
 
     private void ClampVelocity()
     {
+        print("VELOCITY: " + rigidBody.velocity.magnitude);
         //rigidBody.velocity = Vector2.ClampMagnitude(rigidBody.velocity, maxVelocity);
-        rigidBody.velocity = new Vector2(rigidBody.velocity.x, Mathf.Clamp(rigidBody.velocity.y, -maxVelocity, maxVelocity));
+        //rigidBody.velocity = new Vector2(rigidBody.velocity.x, Mathf.Clamp(rigidBody.velocity.y, -maxVelocity, maxVelocity));
+
+
     }
 
     public void OnFallCollision()

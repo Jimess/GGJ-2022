@@ -67,6 +67,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Final Variant
       objectReference: {fileID: 0}
+    - target: {fileID: 5656272988681906010, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_Mass
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 5656272988681906015, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.02
@@ -92,8 +96,16 @@ PrefabInstance:
       value: 81.105
       objectReference: {fileID: 0}
     - target: {fileID: 5656272988860186643, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_Mass
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656272988860186643, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LinearDrag
-      value: 1.5
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656272988860186643, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5656272988860186733, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -108,8 +120,16 @@ PrefabInstance:
       value: 18.212
       objectReference: {fileID: 0}
     - target: {fileID: 5656272989013423953, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_Mass
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656272989013423953, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LinearDrag
-      value: 1.5
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656272989013423953, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5656272989013423955, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -136,12 +156,28 @@ PrefabInstance:
       value: 13.612
       objectReference: {fileID: 0}
     - target: {fileID: 5656272989233475094, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_Mass
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656272989233475094, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LinearDrag
-      value: 1.5
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656272989233475094, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656272989766341603, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_Mass
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5656272989766341603, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LinearDrag
-      value: 1.5
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656272989766341603, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5656272989766341629, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -156,8 +192,16 @@ PrefabInstance:
       value: 19.43
       objectReference: {fileID: 0}
     - target: {fileID: 5656272989894547065, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_Mass
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656272989894547065, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LinearDrag
-      value: 1.5
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656272989894547065, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5656272989894547067, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -172,12 +216,32 @@ PrefabInstance:
       value: 25.905
       objectReference: {fileID: 0}
     - target: {fileID: 5656272990080114248, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_Mass
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656272990080114248, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LinearDrag
-      value: 1.5
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656272990225739993, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_Mass
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5656272990225739993, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LinearDrag
-      value: 1.5
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656272990225739993, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656272990225739994, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_AngleLimits.m_LowerAngle
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 5656272990225739994, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_AngleLimits.m_UpperAngle
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 5656272990225739995, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -192,12 +256,28 @@ PrefabInstance:
       value: 144.142
       objectReference: {fileID: 0}
     - target: {fileID: 5671328263395251353, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_Mass
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 5671328263395251353, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LinearDrag
-      value: 1.5
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5671328263395251353, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782453571079308229, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_Mass
+      value: 0.05
       objectReference: {fileID: 0}
     - target: {fileID: 5782453571079308229, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LinearDrag
-      value: 1.5
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5782453571079308229, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7064971341904483333, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LocalRotation.w
@@ -210,6 +290,14 @@ PrefabInstance:
     - target: {fileID: 7064971341904483333, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 15.317
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153613548851327196, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_AngleLimits.m_LowerAngle
+      value: -180
+      objectReference: {fileID: 0}
+    - target: {fileID: 8153613548851327196, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
+      propertyPath: m_AngleLimits.m_UpperAngle
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
