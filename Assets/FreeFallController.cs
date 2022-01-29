@@ -36,7 +36,7 @@ public class FreeFallController : MonoBehaviour
     void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
-        Time.timeScale = 0.5f;
+        //Time.timeScale = 0.5f;
     }
 
     // Update is called once per frame
