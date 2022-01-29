@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObstacleLoaderSystem : PersistentSingleton<ObstacleLoaderSystem>
+public class ObstacleLoaderSystem : Singleton<ObstacleLoaderSystem>
 {
     public List<GameObject> edgeObstacles; //By default, it's a right edge obstacle
     public List<GameObject> centerObstacles;

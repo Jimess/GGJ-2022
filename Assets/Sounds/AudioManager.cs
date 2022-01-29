@@ -1,19 +1,15 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Audio;
+using System;
+using UnityEngine;
 using DG.Tweening;
 
-public class SoundSystem : Singleton<SoundSystem>
-{
+public class AudioManager : MonoBehaviour {
 
-    public void Play() {
-    }
+    public static AudioManager instance;
 
     public AudioMixer masterAudioMixer;
-    //public AudioMixerGroup musicMixerGroup;
-    //public AudioMixerGroup sfxMixerGroup;
+    public AudioMixerGroup musicMixerGroup;
+    public AudioMixerGroup sfxMixerGroup;
 
     public Sound[] sounds;
 
@@ -22,6 +18,12 @@ public class SoundSystem : Singleton<SoundSystem>
     private const float mutedVolume = -80f;
 
     void Awake() {
+        if (instance != null) {
+            Destroy(gameObject);
+        } else {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
 
         foreach (Sound s in sounds) {
             s.source = gameObject.AddComponent<AudioSource>();

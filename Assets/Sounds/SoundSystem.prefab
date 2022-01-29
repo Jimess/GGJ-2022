@@ -44,4 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80683654bcd3bb346b390eeba28c6a1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundTrackCount: 8
+  masterAudioMixer: {fileID: 24100000, guid: 8fa0a90ca3a6ccd4ca623c2bc6675c40, type: 2}
+  sounds:
+  - name: 
+    clip: {fileID: 0}
+    volume: 0
+    volumeVariance: 0
+    pitch: 0
+    pitchVariance: 0
+    loop: 0
+    mixerGroup: {fileID: 0}
+    soundType: 0
+    source: {fileID: 0}
