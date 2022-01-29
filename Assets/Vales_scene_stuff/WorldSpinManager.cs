@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class WorldSpin : MonoBehaviour
+public class WorldSpinManager : Singleton<WorldSpinManager>
 {
     [Header("Main camera")]
     public GameObject _cam;
