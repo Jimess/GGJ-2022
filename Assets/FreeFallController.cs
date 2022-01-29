@@ -7,9 +7,11 @@ public class FreeFallController : MonoBehaviour
     public float horizontalForceModifier;
     public float verticalForceModifier;
     public float maxVelocity;
+    public float controlDelayAfterCollision = 2f;
 
     private float horizontal;
     private float vertical;
+    private bool controlsEnabled = true;
 
     Vector2 inputDirection;
     Rigidbody2D rigidBody;
@@ -20,11 +22,13 @@ public class FreeFallController : MonoBehaviour
     private void Awake()
     {
         MobOnCollisionTrigger.onCollision += PostCollisionVelocityChange;
+        CollisionManager.onCollision += OnFallCollision;
     }
 
     private void OnDestroy()
     {
         MobOnCollisionTrigger.onCollision -= PostCollisionVelocityChange;
+        CollisionManager.onCollision -= OnFallCollision;
     }
 
     public void PostCollisionVelocityChange(IMob collisionMob)
@@ -54,16 +58,24 @@ public class FreeFallController : MonoBehaviour
 
     private void HandleInput()
     {
+        if (controlsEnabled == false)
+        {
+            return;
+        }
+
         horizontal = Input.GetAxis("Horizontal");
         vertical = Input.GetAxis("Vertical");
-
-        print("local head up - " + transform.up);
 
         inputDirection = new Vector2(horizontal * transform.right.x * horizontalForceModifier, vertical * transform.up.y * verticalForceModifier);
     }
 
     private void HandleMovementUpdate()
     {
+        if (controlsEnabled == false)
+        {
+            return;
+        }
+
         rigidBody.AddForce(inputDirection);
     }
 
@@ -71,5 +83,17 @@ public class FreeFallController : MonoBehaviour
     {
         //rigidBody.velocity = Vector2.ClampMagnitude(rigidBody.velocity, maxVelocity);
         rigidBody.velocity = new Vector2(rigidBody.velocity.x, Mathf.Clamp(rigidBody.velocity.y, -maxVelocity, maxVelocity));
+    }
+
+    public void OnFallCollision()
+    {
+        StartCoroutine(TriggerDisableControls());
+    }
+
+    public IEnumerator TriggerDisableControls()
+    {
+        controlsEnabled = false;
+        yield return new WaitForSeconds(controlDelayAfterCollision);
+        controlsEnabled = true;
     }
 }
