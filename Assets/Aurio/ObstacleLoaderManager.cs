@@ -23,7 +23,7 @@ public class ObstacleLoaderManager : MonoBehaviour
     {
         obstacleLoaderSystem = FindObjectOfType<ObstacleLoaderSystem>();
 
-        centerObstacleMargin = gameBounds.size.x / centerObstacleMarginPercent;
+        centerObstacleMargin = gameBounds.size.x * centerObstacleMarginPercent / 100;
 
         //Leave 5% of level length start and end empty
         startingHeight = gameBounds.transform.position.y + gameBounds.size.y / 2 - gameBounds.size.y * 0.05f;
@@ -46,7 +46,7 @@ public class ObstacleLoaderManager : MonoBehaviour
              * 4 - spawn an edge and center
              * 5 - spawn all
             */
-            int spawnCase = Random.Range(0, 3);//Kolkas basic
+            int spawnCase = Random.Range(0, 6);
 
             switch (spawnCase)
             {
@@ -75,6 +75,8 @@ public class ObstacleLoaderManager : MonoBehaviour
                 default:
                     break;
             }
+
+            //TODO Spawn Mobs
 
             obstacleHeight -= stepLength;
         }
