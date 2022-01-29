@@ -35,7 +35,6 @@ public class CollisionManager : Singleton<CollisionManager>
                 onMaxCollisions?.Invoke();
                 WorldSpinManager.Instance.Spin();
             }
-           
         }
     }
 
