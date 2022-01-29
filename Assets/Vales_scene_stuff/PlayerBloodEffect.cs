@@ -6,11 +6,14 @@ public class PlayerBloodEffect : MonoBehaviour
 {
     public GameObject bloodEffect;
     // Start is called before the first frame update
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void Start()
     {
-        if (!collision.gameObject.CompareTag("Player") && !collision.gameObject.CompareTag("Game_bounds"))
-        {
-            Instantiate(bloodEffect, transform.position, Quaternion.identity);
-        }
+        CollisionManager.onCollision += bloodSplatter;
     }
+
+    private void bloodSplatter()
+    {
+        Instantiate(bloodEffect, transform.position, Quaternion.identity);
+    }
+
 }
