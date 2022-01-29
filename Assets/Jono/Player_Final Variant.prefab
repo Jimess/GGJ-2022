@@ -33,11 +33,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5656272988299834192, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.35
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5656272988299834192, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -7.52
+      value: -7.5
       objectReference: {fileID: 0}
     - target: {fileID: 5656272988299834192, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -450,6 +450,31 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5656272988681906011, guid: 0320ee38b9a44004f8bd4bf67fa3247a, type: 3}
   m_PrefabInstance: {fileID: 600541510978702117}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1110230518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5056015169176906878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04394ccdeed800a4f9ee894ab3647572, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1110230526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5056015169176906878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53dc1ccb213d8cf4bb438978f759e2af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bloodEffect: {fileID: 2238080702924538267, guid: 463fafe337d5d9b408e5a7916c9a821f, type: 3}
 --- !u!114 &1442134497
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -478,28 +503,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21af54c0889c16f4795bd7f10e0efce8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1110230518
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5056015169176906878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04394ccdeed800a4f9ee894ab3647572, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1110230526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5056015169176906878}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53dc1ccb213d8cf4bb438978f759e2af, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bloodEffect: {fileID: 2238080702924538267, guid: 463fafe337d5d9b408e5a7916c9a821f, type: 3}
