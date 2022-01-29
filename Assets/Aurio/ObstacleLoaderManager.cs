@@ -5,6 +5,7 @@ using UnityEngine;
 public class ObstacleLoaderManager : MonoBehaviour
 {
     public BoxCollider2D gameBounds;
+    public bool isAngelMob = true;
 
     private ObstacleLoaderSystem obstacleLoaderSystem;
 
@@ -18,7 +19,7 @@ public class ObstacleLoaderManager : MonoBehaviour
     public int steps = 10;
     [Header("How far away from the edge a center obstacle has to be")]
     public int centerObstacleMarginPercent = 10;
-    public int mobSpawnFrequency = 0;
+    public int mobCount = 2;
 
     // Start is called before the first frame update
     void Start()
@@ -37,6 +38,15 @@ public class ObstacleLoaderManager : MonoBehaviour
     private void loadObstacles()
     {
         float obstacleHeight = startingHeight;
+
+        List<int> mobSpawnStep = new();
+
+        for (int i = 0; i < mobCount; i++)
+        {
+            int step = Random.Range(0, steps);
+            mobSpawnStep.Add(step);
+        }
+        mobSpawnStep.Sort();
 
         for (int i = 0; i < steps; i++)
         {
@@ -79,10 +89,13 @@ public class ObstacleLoaderManager : MonoBehaviour
             }
 
             //TODO Spawn Mobs
+            while (mobSpawnStep[0] == i)
+            {
+                spawnMob(obstacleHeight);
+            }
 
             obstacleHeight -= stepLength;
         }
-
     }
 
     private void spawnEdgeObstacle(float height, bool rightSide)
