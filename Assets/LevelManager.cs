@@ -22,6 +22,10 @@ public class LevelManager : Singleton<LevelManager>
         gatesOfHeavenScript.OpenGate();
     }
 
+    //public void GetAllMobs(out List<GameObject> angels, out List<GameObject> devils) {
+
+    //}
+
     public void GameOver() {
         print("gameOver son, heave is da sheet");
         Destroy(playerPrefab.GetComponentInChildren<FreeFallController>());
