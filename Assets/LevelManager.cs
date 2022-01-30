@@ -29,6 +29,7 @@ public class LevelManager : Singleton<LevelManager>
     public void GameOver() {
         print("gameOver son, heave is da sheet");
         Destroy(playerPrefab.GetComponentInChildren<FreeFallController>());
-        playerPrefab.GetComponentInChildren<FreeFallController>().DisableCharacter();
+        GameObject.FindObjectOfType<FreeFallController>().DisableCharacter();
+        //playerPrefab.GetComponentInChildren<FreeFallController>()?.DisableCharacter();
     }
 }

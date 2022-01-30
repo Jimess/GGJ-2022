@@ -474,10 +474,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 999395157}
     m_Modifications:
-    - target: {fileID: 1701233390, guid: 391176804bd76bd4a845b697c136bf65, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8062380655654978085, guid: 391176804bd76bd4a845b697c136bf65, type: 3}
       propertyPath: m_Name
       value: GameBounds (1)
@@ -2363,23 +2359,6 @@ Canvas:
   m_SortingLayerID: 46710097
   m_SortingOrder: 1
   m_TargetDisplay: 0
---- !u!1 &1701233390 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1701233390, guid: 391176804bd76bd4a845b697c136bf65, type: 3}
-  m_PrefabInstance: {fileID: 327788493}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1701233392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701233390}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a0899dcdce291b6419ba8a8e6017b34c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1703976280 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1703976280, guid: 452557ced01418247be936520b51b1b1, type: 3}
