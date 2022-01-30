@@ -12,10 +12,12 @@ public class MobObstacle : MonoBehaviour
 
     bool isMovingRight = true;
 
+    Tween moveTween;
+
     float moveXMin;
     float moveXMax;
 
-    void Start()
+    void OnEnable()
     {
         BoxCollider2D gameBounds = FindObjectOfType<ObstacleLoaderManager>().gameBounds;
         moveXMin = gameBounds.transform.position.x - gameBounds.size.x / 2;
@@ -23,6 +25,12 @@ public class MobObstacle : MonoBehaviour
 
         Move();
 
+    }
+
+    private void OnDisable() {
+        if (moveTween != null || moveTween.IsPlaying()) {
+            moveTween.Kill();
+        }
     }
 
     // Update is called once per frame
@@ -39,7 +47,7 @@ public class MobObstacle : MonoBehaviour
         else
             moveToX = moveXMin;
 
-        transform.parent.DOMoveX(moveToX, moveDuration).SetEase(Ease.Linear).OnComplete(() =>
+        moveTween = transform.parent.DOMoveX(moveToX, moveDuration).SetEase(Ease.Linear).OnComplete(() =>
         {
             isMovingRight = !isMovingRight;
 
@@ -59,8 +67,8 @@ public class MobObstacle : MonoBehaviour
         if (collision.tag == "Player")
         {
             CollisionManager.Instance.countCollision(collision.gameObject);
-
-            //transform.parent.DoScale(Vector3.Zero, 1).SetEase(Ease.outQuint).OnComplete()
+            transform.GetComponent<CapsuleCollider2D>().enabled = false;
+            transform.parent.DOScale(Vector3.zero, 1).SetEase(Ease.OutQuint).OnComplete(() => Destroy(gameObject));
             saySomething();
         }
     }

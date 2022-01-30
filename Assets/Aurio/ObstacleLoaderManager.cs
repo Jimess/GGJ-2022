@@ -9,8 +9,8 @@ public class ObstacleLoaderManager : MonoBehaviour
 
     private ObstacleLoaderSystem obstacleLoaderSystem;
 
-    private static List<GameObject> angelsList;
-    private static List<GameObject> devilsList;
+    private static List<GameObject> angelsList = new List<GameObject>();
+    private static List<GameObject> devilsList = new List<GameObject>();
 
     private string obstacleTag = "Obstacle";
     private float ObstacleMarginHeightPercent = 5f;
@@ -47,8 +47,8 @@ public class ObstacleLoaderManager : MonoBehaviour
     void Start()
     {
         obstacleLoaderSystem = FindObjectOfType<ObstacleLoaderSystem>();
-        angelsList = new();
-        devilsList = new();
+        angelsList = new List<GameObject>();
+        devilsList = new List<GameObject>();
 
         centerObstacleMargin = gameBounds.size.x * centerObstacleMarginPercent / 100;
 
@@ -66,7 +66,7 @@ public class ObstacleLoaderManager : MonoBehaviour
     {
         float obstacleHeight = startingHeight;
 
-        List<int> mobSpawnSteps = new();
+        List<int> mobSpawnSteps = new List<int>();
         int mobStepRandMax = steps;
 
         for (int i = 0; i < mobCount; i++)
@@ -96,7 +96,7 @@ public class ObstacleLoaderManager : MonoBehaviour
             */
             int spawnCase = Random.Range(0, 6);
 
-            /*switch (spawnCase)
+            switch (spawnCase)
             {
                 case 0:
                     spawnEdgeObstacle(obstacleHeight, true);
@@ -122,7 +122,7 @@ public class ObstacleLoaderManager : MonoBehaviour
                     break;
                 default:
                     break;
-            }*/
+            }
 
             while (mobSpawnSteps.Count > 0 && mobSpawnSteps[0] == i)
             {

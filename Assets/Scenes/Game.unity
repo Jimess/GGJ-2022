@@ -3059,6 +3059,10 @@ PrefabInstance:
       value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 466001208601882798, guid: 6ebe763fcc47fcd479b90a0cd9e0b41b, type: 3}
+      propertyPath: mobCount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 466001208601882798, guid: 6ebe763fcc47fcd479b90a0cd9e0b41b, type: 3}
       propertyPath: playerEnd
       value: 
       objectReference: {fileID: 1233209249}
