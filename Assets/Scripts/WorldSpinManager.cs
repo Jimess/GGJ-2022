@@ -15,6 +15,10 @@ public class WorldSpinManager : Singleton<WorldSpinManager>
     public delegate void CameraRotated();
     public static CameraRotated OnCameraRotation;
 
+    private void Start() {
+        Physics2D.gravity = new Vector2(0, -9.81f);
+    }
+
     public void Spin()
     {
         SpinCamera();
