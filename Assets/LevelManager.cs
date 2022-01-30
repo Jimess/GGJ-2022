@@ -32,4 +32,9 @@ public class LevelManager : Singleton<LevelManager>
         GameObject.FindObjectOfType<FreeFallController>().DisableCharacter();
         //playerPrefab.GetComponentInChildren<FreeFallController>()?.DisableCharacter();
     }
+
+    public void loadSceneAfterDeath()
+    {
+        Initiate.Fade("Menu", Color.black, 2f);
+    }
 }

@@ -14,6 +14,7 @@ public class EndGame : MonoBehaviour
         {
             _player.SetActive(false);
             Instantiate(hitGroudEffect, collision.contacts[0].point, Quaternion.identity);
+            LevelManager.Instance.loadSceneAfterDeath();
         }
     }
 }
