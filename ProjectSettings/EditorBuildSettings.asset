@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: f19e5ed5188897541a8b51106cd99e94
+  - enabled: 1
+    path: Assets/Scenes/Heaven.unity
+    guid: edd9fef6835368045b724347c2675bd2
   - enabled: 0
     path: Assets/Scenes/Aurio.unity
     guid: 2ad575408508ece4f86983ce171d3d08

@@ -30,6 +30,12 @@ public class LevelManager : Singleton<LevelManager>
         print("gameOver son, heave is da sheet");
         Destroy(playerPrefab.GetComponentInChildren<FreeFallController>());
         GameObject.FindObjectOfType<FreeFallController>().DisableCharacter();
+        Initiate.Fade("Heaven", Color.white, 2f);
         //playerPrefab.GetComponentInChildren<FreeFallController>()?.DisableCharacter();
+    }
+
+    public void loadSceneAfterDeath()
+    {
+        Initiate.Fade("Menu", Color.black, 2f);
     }
 }
