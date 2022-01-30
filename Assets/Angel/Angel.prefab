@@ -193,8 +193,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5485cfaf6c5a394ca30e8645a5f977b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogText: You hit me!
+  dialogText: We're here for you...
   dialogDuration: 5
+  moveDuration: 5
 --- !u!1 &1136445168030175816
 GameObject:
   m_ObjectHideFlags: 0

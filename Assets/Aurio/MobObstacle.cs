@@ -58,7 +58,7 @@ public class MobObstacle : MonoBehaviour
 
     void flip()
     {
-        float newX = -transform.parent.localScale.x;//TODO Flip parent
+        float newX = -transform.parent.localScale.x;
         transform.parent.localScale = new Vector3(newX, transform.parent.localScale.y, transform.parent.localScale.z);
     }
 

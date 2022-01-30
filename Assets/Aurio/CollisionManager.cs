@@ -63,6 +63,7 @@ public class CollisionManager : Singleton<CollisionManager>
     {
         collisions++;
         updateCollisionUI();
+        hitObstacles.Add(mob);
 
         if (collisions == maxCollisions)
         {
@@ -93,7 +94,9 @@ public class CollisionManager : Singleton<CollisionManager>
 
     public void restartCollisionCount()
     {
+        GameObject lastObstacle = hitObstacles[hitObstacles.Count - 1];
         hitObstacles.Clear();
+        hitObstacles.Add(lastObstacle);
         collisions = 0;
         updateCollisionUI();
     }

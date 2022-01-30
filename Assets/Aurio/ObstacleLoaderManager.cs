@@ -50,6 +50,9 @@ public class ObstacleLoaderManager : MonoBehaviour
         angelsList = new List<GameObject>();
         devilsList = new List<GameObject>();
 
+        WorldSpinManager.OnCameraRotation += flipMobsY;
+        WorldSpinManager.OnCameraRotation += changeActiveMobs;
+
         centerObstacleMargin = gameBounds.size.x * centerObstacleMarginPercent / 100;
 
         //marginHeight = gameBounds.size.y + gameBounds.offset.y * ObstacleMarginHeightPercent / 100; // manau kad nereikia
@@ -197,6 +200,9 @@ public class ObstacleLoaderManager : MonoBehaviour
         {
             obj.SetActive(!showAngelMobs);
             devilsList.Add(obj);
+
+            Vector3 flippedScale = new Vector3(obj.transform.localScale.x, -obj.transform.localScale.y, obj.transform.localScale.z);
+            obj.transform.localScale = flippedScale;
         }
     }
 
@@ -249,5 +255,26 @@ public class ObstacleLoaderManager : MonoBehaviour
     {
         angels = angelsList;
         devils = devilsList;
+    }
+
+    public void flipMobsY()
+    {
+        print("Fliping mobs...");
+        foreach (var mob in angelsList)
+        {
+            flipOnYAxis(mob);
+        }
+
+        foreach (var mob in angelsList)
+        {
+            flipOnYAxis(mob);
+        }
+    }
+
+    private void flipOnYAxis(GameObject gameObject)
+    {
+        /*float yAxis = gameObject.transform.localScale.y;
+        print("yAxis: " + yAxis);
+        gameObject.transform.localScale = new Vector3(gameObject.transform.localScale.x, yAxis , gameObject.transform.localScale.z);*/
     }
 }
