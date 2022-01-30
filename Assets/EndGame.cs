@@ -13,7 +13,7 @@ public class EndGame : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             _player.SetActive(false);
-            Instantiate(hitGroudEffect, transform.position, Quaternion.identity);
+            Instantiate(hitGroudEffect, collision.contacts[0].point, Quaternion.identity);
         }
     }
 }
