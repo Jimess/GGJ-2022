@@ -35,6 +35,8 @@ public class CollisionManager : Singleton<CollisionManager>
         if (!hitObstacles.Contains(obstacle)) {
             hitObstacles.Add(obstacle);
 
+            DialogManager.Instance.ShowDialog(1f, "Ouch....");
+
             collisions++;
 
             updateCollisionUI();
