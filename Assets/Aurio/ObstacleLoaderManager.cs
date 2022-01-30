@@ -5,9 +5,12 @@ using UnityEngine;
 public class ObstacleLoaderManager : MonoBehaviour
 {
     public BoxCollider2D gameBounds;
-    public bool isAngelMob = true;
+    public bool showAngelMobs = true;
 
     private ObstacleLoaderSystem obstacleLoaderSystem;
+
+    private static List<GameObject> angelsList;
+    private static List<GameObject> devilsList;
 
     private string obstacleTag = "Obstacle";
     private float ObstacleMarginHeightPercent = 5f;
@@ -44,6 +47,8 @@ public class ObstacleLoaderManager : MonoBehaviour
     void Start()
     {
         obstacleLoaderSystem = FindObjectOfType<ObstacleLoaderSystem>();
+        angelsList = new();
+        devilsList = new();
 
         centerObstacleMargin = gameBounds.size.x * centerObstacleMarginPercent / 100;
 
@@ -61,14 +66,23 @@ public class ObstacleLoaderManager : MonoBehaviour
     {
         float obstacleHeight = startingHeight;
 
-        List<int> mobSpawnStep = new List<int>();
+        List<int> mobSpawnSteps = new();
+        int mobStepRandMax = steps;
 
         for (int i = 0; i < mobCount; i++)
         {
-            int step = Random.Range(0, steps);
-            mobSpawnStep.Add(step);
+            int step = Random.Range(0, mobStepRandMax);
+            mobStepRandMax--;
+
+            for (int j = 0; j < mobSpawnSteps.Count; j++)
+            {
+                //Don't spawn on the same step
+                if (step >= mobSpawnSteps[j])
+                    step++;
+            }
+            mobSpawnSteps.Add(step);
         }
-        mobSpawnStep.Sort();
+        mobSpawnSteps.Sort();
 
         for (int i = 0; i < steps; i++)
         {
@@ -82,7 +96,7 @@ public class ObstacleLoaderManager : MonoBehaviour
             */
             int spawnCase = Random.Range(0, 6);
 
-            switch (spawnCase)
+            /*switch (spawnCase)
             {
                 case 0:
                     spawnEdgeObstacle(obstacleHeight, true);
@@ -108,12 +122,13 @@ public class ObstacleLoaderManager : MonoBehaviour
                     break;
                 default:
                     break;
-            }
+            }*/
 
-            while (mobSpawnStep.Count > 0 && mobSpawnStep[0] == i)
+            while (mobSpawnSteps.Count > 0 && mobSpawnSteps[0] == i)
             {
-                spawnMob(obstacleHeight);
-                mobSpawnStep.RemoveAt(0);
+                spawnMob(obstacleHeight, true);
+                spawnMob(obstacleHeight, false);
+                mobSpawnSteps.RemoveAt(0);
             }
 
             obstacleHeight -= stepLength;
@@ -155,25 +170,47 @@ public class ObstacleLoaderManager : MonoBehaviour
         obj.transform.GetChild(0).gameObject.tag = obstacleTag;
     }
 
-    private void spawnMob(float height)
+    private void spawnMob(float height, bool spawnAngel)
     {
         float maxDistanceFromCenter = (gameBounds.size.x / 2 - centerObstacleMargin);
-        float xPosition = Random.Range(gameBounds.transform.position.x - maxDistanceFromCenter, gameBounds.transform.position.x + maxDistanceFromCenter);
+        //float xPosition = Random.Range(gameBounds.transform.position.x - maxDistanceFromCenter, gameBounds.transform.position.x + maxDistanceFromCenter);
+        //visad kairej spawnint
+        float xPosition = gameBounds.transform.position.x - maxDistanceFromCenter;
+
         Vector3 position = new Vector3(xPosition, height);
 
         GameObject prefab;
 
-        if (isAngelMob)
+        if (spawnAngel)
             prefab = obstacleLoaderSystem.GetAngelMob();
         else
             prefab = obstacleLoaderSystem.GetDevilMob();
 
         GameObject obj = Instantiate(prefab, position, Quaternion.identity, gameBounds.transform);
+
+        if (spawnAngel)
+        {
+            obj.SetActive(showAngelMobs);
+            angelsList.Add(obj);
+        }
+        else
+        {
+            obj.SetActive(!showAngelMobs);
+            devilsList.Add(obj);
+        }
     }
 
-    public void transformMobs()
+    public void changeActiveMobs()
     {
-        //Transform angels to devils and vise versa
+        foreach (var mob in angelsList)
+        {
+            mob.SetActive(!mob.activeInHierarchy);
+        }
+
+        foreach (var mob in devilsList)
+        {
+            mob.SetActive(!mob.activeInHierarchy);
+        }
     }
 
     private void OnDrawGizmosSelected() {
@@ -207,5 +244,10 @@ public class ObstacleLoaderManager : MonoBehaviour
         playerEnd.transform.position = new Vector3(0, gameBounds.transform.position.y - gameBounds.size.y - playerEndOffsetY);
 
         gatesOfHeaven.transform.position = new Vector3(gatesOfHeaven.transform.position.x, playerStart.transform.position.y - gatesOfHeavenOffsetY);
+    }
+    public void getMobs(out List<GameObject> angels, out List<GameObject> devils)
+    {
+        angels = angelsList;
+        devils = devilsList;
     }
 }

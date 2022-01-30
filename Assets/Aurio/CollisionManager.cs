@@ -32,15 +32,19 @@ public class CollisionManager : Singleton<CollisionManager>
             onCollision?.Invoke();
             return;
         }
+
+        if (obstacle.CompareTag("Mob")) {
+            countMobCollision(obstacle);
+            return;
+        }
+
         if (!hitObstacles.Contains(obstacle)) {
             hitObstacles.Add(obstacle);
 
             DialogManager.Instance.ShowDialog(1f, "Ouch....");
 
             collisions++;
-
             updateCollisionUI();
-
             onCollision?.Invoke();
 
             if (collisions == maxCollisions)
@@ -48,6 +52,18 @@ public class CollisionManager : Singleton<CollisionManager>
                 onMaxCollisions?.Invoke();
                 WorldSpinManager.Instance.Spin();
             }
+        }
+    }
+
+    private void countMobCollision(GameObject mob)
+    {
+        collisions++;
+        updateCollisionUI();
+
+        if (collisions == maxCollisions)
+        {
+            onMaxCollisions?.Invoke();
+            WorldSpinManager.Instance.Spin();
         }
     }
 

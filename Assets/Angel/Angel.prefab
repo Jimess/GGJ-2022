@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 1136445166478926422}
   - component: {fileID: 1136445166478926423}
   - component: {fileID: 1136445166478926425}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Angel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1136445166478926420}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7, y: -0.01, z: 0.08322986}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -76,7 +76,9 @@ GameObject:
   - component: {fileID: 1136445167029338133}
   - component: {fileID: 1136445167029338135}
   - component: {fileID: 1136445167029338132}
-  m_Layer: 0
+  - component: {fileID: 5219718072634627528}
+  - component: {fileID: 3918942765823459158}
+  m_Layer: 7
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,6 +165,36 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
+--- !u!70 &5219718072634627528
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136445167029338130}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 2.67, y: 3.73}
+  m_Direction: 0
+--- !u!114 &3918942765823459158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1136445167029338130}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5485cfaf6c5a394ca30e8645a5f977b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogText: You hit me!
+  dialogDuration: 5
 --- !u!1 &1136445168030175816
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +206,7 @@ GameObject:
   - component: {fileID: 1136445168030175819}
   - component: {fileID: 1136445168030175821}
   - component: {fileID: 1136445168030175818}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -270,7 +302,7 @@ GameObject:
   - component: {fileID: 1136445168221652254}
   - component: {fileID: 1136445168221652224}
   - component: {fileID: 1136445168221652225}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: halo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
