@@ -16,6 +16,7 @@ public class CollisionManager : Singleton<CollisionManager>
     public static OnMaxCollisions onMaxCollisions;
     public delegate void OnCollision();
     public static OnCollision onCollision;
+    //public delegate ContactPoint2D OnCollisionWithPointDelegate(ContactPoint2D contactPoint);
 
     [SerializeField] List<GameObject> normalImgs;
     [SerializeField] List<GameObject> heavenImgs;

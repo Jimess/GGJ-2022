@@ -9,7 +9,7 @@ public class GroundScript : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Instantiate(groundEffect, transform.position, Quaternion.identity);
+            Instantiate(groundEffect, collision.contacts[0].point, Quaternion.FromToRotation(Vector3.down, collision.contacts[0].normal));
         }
     }
 }
