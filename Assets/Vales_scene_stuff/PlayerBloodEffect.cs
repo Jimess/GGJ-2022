@@ -11,6 +11,11 @@ public class PlayerBloodEffect : MonoBehaviour
         CollisionManager.onCollision += bloodSplatter;
     }
 
+    private void OnDestroy()
+    {
+        CollisionManager.onCollision -= bloodSplatter;
+    }
+
     private void bloodSplatter()
     {
         Instantiate(bloodEffect, transform.position, Quaternion.identity);

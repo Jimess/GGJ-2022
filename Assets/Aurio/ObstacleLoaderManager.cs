@@ -65,6 +65,13 @@ public class ObstacleLoaderManager : MonoBehaviour
         loadObstacles();
     }
 
+    private void OnDestroy()
+    {
+
+        WorldSpinManager.OnCameraRotation -= flipMobsY;
+        WorldSpinManager.OnCameraRotation -= changeActiveMobs;
+    }
+
     private void loadObstacles()
     {
         float obstacleHeight = startingHeight;
