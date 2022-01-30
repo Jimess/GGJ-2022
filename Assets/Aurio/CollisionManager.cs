@@ -25,6 +25,13 @@ public class CollisionManager : Singleton<CollisionManager>
 
     public void countCollision(GameObject obstacle)
     {
+        if (obstacle.CompareTag("HeavenDoor") && !WorldSpinManager.Instance.isGoingToEnd()) {
+            WorldSpinManager.Instance.Spin();
+            restartCollisionCount();
+            updateCollisionUI();
+            onCollision?.Invoke();
+            return;
+        }
         if (!hitObstacles.Contains(obstacle)) {
             hitObstacles.Add(obstacle);
 

@@ -23,6 +23,23 @@ public class ObstacleLoaderManager : MonoBehaviour
     public int centerObstacleMarginPercent = 10;
     public int mobCount = 2;
 
+    //CONSTS
+    private const float SCREEN_WIDTH = 17.77778f;
+
+    //[SerializeField] private GameObject gameBounds;
+    [Header("Refs")]
+    [SerializeField] private List<GameObject> walls;
+    [SerializeField] private Transform playerStart;
+    [SerializeField] Transform playerEnd;
+    [SerializeField] GameObject gatesOfHeaven; //need to place on top of map
+
+    [Header("Level SETTINGS")]
+    public float levelHeight = 200;
+    public float playerStartOffsetY = 40f;
+    public float playerEndOffsetY = 40f; // will be subtracted to move down
+    public float gatesOfHeavenOffsetY = 2f;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,9 +47,11 @@ public class ObstacleLoaderManager : MonoBehaviour
 
         centerObstacleMargin = gameBounds.size.x * centerObstacleMarginPercent / 100;
 
-        marginHeight = gameBounds.size.y * ObstacleMarginHeightPercent / 100;
+        //marginHeight = gameBounds.size.y + gameBounds.offset.y * ObstacleMarginHeightPercent / 100; // manau kad nereikia
 
-        startingHeight = gameBounds.transform.position.y + gameBounds.size.y / 2 - marginHeight;
+        //rasti virsutines bound dalies starta
+        //startingHeight = gameBounds.transform.position.y + gameBounds.size.y / 2 - marginHeight;
+        startingHeight = gameBounds.transform.position.y + gameBounds.size.y / 2 + gameBounds.offset.y;
         stepLength = (gameBounds.size.y - marginHeight * 2) / steps;
 
         loadObstacles();
@@ -42,7 +61,7 @@ public class ObstacleLoaderManager : MonoBehaviour
     {
         float obstacleHeight = startingHeight;
 
-        List<int> mobSpawnStep = new();
+        List<int> mobSpawnStep = new List<int>();
 
         for (int i = 0; i < mobCount; i++)
         {
@@ -159,9 +178,34 @@ public class ObstacleLoaderManager : MonoBehaviour
 
     private void OnDrawGizmosSelected() {
         float newCenterObstacleMargin = gameBounds.size.x * centerObstacleMarginPercent / 100;
-        float newMarginHeight = gameBounds.size.y * ObstacleMarginHeightPercent / 100;
+        //float newMarginHeight = gameBounds.size.y + gameBounds.offset.y * ObstacleMarginHeightPercent / 100;
+        float newMarginHeight = gameBounds.size.y;//gameBounds.transform.position.y - gameBounds.size.y / 2 + gameBounds.offset.y; //* ObstacleMarginHeightPercent / 100;
 
         Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(gameBounds.transform.position, new Vector3(gameBounds.size.x - newCenterObstacleMargin, gameBounds.size.y - newMarginHeight * 2, 0));
+        Gizmos.DrawWireCube(new Vector3(gameBounds.transform.position.x, gameBounds.transform.position.y + gameBounds.offset.y), new Vector3(gameBounds.size.x - newCenterObstacleMargin, newMarginHeight, 0));
+    }
+
+    //Kvieciamas kiekviena kart kai keiciasi inspector values
+    private void OnValidate() {
+        //paupdeitint gamebounds, game walls ir player end ir start pozicijas
+        //gameBounds.transform.position = new Vector3(0, -levelHeight / 2, 0);
+        //BoxCollider2D boundsCol = GetComponent<BoxCollider2D>();
+        gameBounds.size = new Vector2(SCREEN_WIDTH, levelHeight);
+        gameBounds.offset = new Vector2(0, -levelHeight / 2); // do not spawn obstacles in end game area
+
+        foreach (GameObject obj in walls) {
+            BoxCollider2D wallBoxCol = obj.GetComponent<BoxCollider2D>();
+            wallBoxCol.size = new Vector2(SCREEN_WIDTH, levelHeight + playerEndOffsetY + playerStartOffsetY);
+            //wallBoxCol.offset = new Vector2(0, -levelHeight / 2);
+
+            obj.transform.position = new Vector3(obj.transform.position.x, -levelHeight / 2 - playerEndOffsetY/2 + playerStartOffsetY/2);
+
+            obj.GetComponent<SpriteRenderer>().size = new Vector2(SCREEN_WIDTH, levelHeight + playerEndOffsetY + playerStartOffsetY);
+        }
+
+        playerStart.transform.position = new Vector3(0, gameBounds.transform.position.y + playerStartOffsetY);
+        playerEnd.transform.position = new Vector3(0, gameBounds.transform.position.y - gameBounds.size.y - playerEndOffsetY);
+
+        gatesOfHeaven.transform.position = new Vector3(gatesOfHeaven.transform.position.x, playerStart.transform.position.y - gatesOfHeavenOffsetY);
     }
 }

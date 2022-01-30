@@ -14,6 +14,11 @@ public class CollisionTracker : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("HeavenDoor")) {
+            print("Hit heaven door");
+            collisionManager?.countCollision(collision.gameObject);
+        }
+
         if (collision.gameObject.tag == "Obstacle")
         {
             collisionManager?.countCollision(collision.gameObject);

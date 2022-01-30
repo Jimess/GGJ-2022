@@ -12,6 +12,7 @@ public class FreeFallController : MonoBehaviour
     private float horizontal;
     private float vertical;
     private bool controlsEnabled = true;
+    private bool controlsInverted = false;
 
     Vector2 inputDirection;
     Rigidbody2D rigidBody;
@@ -19,10 +20,15 @@ public class FreeFallController : MonoBehaviour
     public delegate void OnVelocityChange(Vector2 velocityChange);
     public static OnVelocityChange onVelocityChange;
 
+    private Coroutine cooldownCoroutine;
+
+    private bool disabled = false;
+
     private void Awake()
     {
         MobOnCollisionTrigger.onCollision += PostCollisionVelocityChange;
         CollisionManager.onCollision += OnFallCollision;
+        WorldSpinManager.OnCameraRotation += InvertControls;
     }
 
     private void OnDestroy()
@@ -46,11 +52,17 @@ public class FreeFallController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (disabled) {
+            return;
+        }
         HandleInput();
     }
 
     private void FixedUpdate()
     {
+        if (disabled) {
+            return;
+        }
         HandleMovementUpdate();
         onVelocityChange(rigidBody.velocity);
         ClampVelocity();
@@ -65,8 +77,9 @@ public class FreeFallController : MonoBehaviour
             return;
         }
 
-        horizontal = Input.GetAxis("Horizontal");
-        vertical = Input.GetAxis("Vertical");
+
+        horizontal = !controlsInverted ? Input.GetAxis("Horizontal") : -Input.GetAxis("Horizontal");
+        vertical = !controlsInverted ? Input.GetAxis("Vertical") : -Input.GetAxis("Vertical");
 
         inputDirection = new Vector2(horizontal * horizontalForceModifier, vertical * verticalForceModifier);
     }
@@ -83,7 +96,7 @@ public class FreeFallController : MonoBehaviour
 
     private void ClampVelocity()
     {
-        print("VELOCITY: " + rigidBody.velocity.magnitude);
+        //print("VELOCITY: " + rigidBody.velocity.magnitude);
         //rigidBody.velocity = Vector2.ClampMagnitude(rigidBody.velocity, maxVelocity);
         //rigidBody.velocity = new Vector2(rigidBody.velocity.x, Mathf.Clamp(rigidBody.velocity.y, -maxVelocity, maxVelocity));
 
@@ -92,7 +105,15 @@ public class FreeFallController : MonoBehaviour
 
     public void OnFallCollision()
     {
-        StartCoroutine(TriggerDisableControls());
+        if (cooldownCoroutine != null) {
+            StopCoroutine(cooldownCoroutine);
+        }
+
+        cooldownCoroutine = StartCoroutine(TriggerDisableControls());
+    }
+
+    public void InvertControls() {
+        controlsInverted = !controlsInverted;
     }
 
     public IEnumerator TriggerDisableControls()
@@ -100,5 +121,11 @@ public class FreeFallController : MonoBehaviour
         controlsEnabled = false;
         yield return new WaitForSeconds(controlDelayAfterCollision);
         controlsEnabled = true;
+    }
+
+    public void DisableCharacter() {
+        disabled = true;
+        //rigidBody.isKinematic = true;
+        //rigidBody.v
     }
 }
