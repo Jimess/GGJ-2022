@@ -17,6 +17,10 @@ public class CollisionManager : Singleton<CollisionManager>
     public delegate void OnCollision();
     public static OnCollision onCollision;
 
+    [SerializeField] List<GameObject> normalImgs;
+    [SerializeField] List<GameObject> heavenImgs;
+    [SerializeField] List<GameObject> theEndImgs;
+
     void Start()
     {
         hitObstacles = new List<GameObject>();
@@ -54,6 +58,21 @@ public class CollisionManager : Singleton<CollisionManager>
     private void updateCollisionUI()
     {
         collisionCountText.SetText(collisions.ToString());
+
+        for (int i = 0; i < normalImgs.Count; i++) {
+            normalImgs[i].SetActive(false);
+            heavenImgs[i].SetActive(false);
+            theEndImgs[i].SetActive(false);
+            if (collisions > i) {
+                if (WorldSpinManager.Instance.isGoingToEnd()) {
+                    heavenImgs[i].SetActive(true);
+                } else {
+                    theEndImgs[i].SetActive(true);
+                }
+            } else {
+                normalImgs[i].SetActive(true);
+            }
+        }
     }
 
     public void restartCollisionCount()
