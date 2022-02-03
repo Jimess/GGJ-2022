@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class FreeFallController : MonoBehaviour
 {
+    [Header("Joystick")]
+    [SerializeField] Joystick joystick;
+
     public float horizontalForceModifier;
     public float verticalForceModifier;
     public float maxVelocity;
@@ -77,9 +80,10 @@ public class FreeFallController : MonoBehaviour
             return;
         }
 
+        
 
-        horizontal = !controlsInverted ? Input.GetAxis("Horizontal") : -Input.GetAxis("Horizontal");
-        vertical = !controlsInverted ? Input.GetAxis("Vertical") : -Input.GetAxis("Vertical");
+        horizontal = !controlsInverted ? joystick.Horizontal/*Input.GetAxis("Horizontal")*/ : -joystick.Horizontal /*-Input.GetAxis("Horizontal")*/;
+        vertical = !controlsInverted ? joystick.Vertical : -joystick.Vertical /*Input.GetAxis("Vertical") : -Input.GetAxis("Vertical")*/;
 
         inputDirection = new Vector2(horizontal * horizontalForceModifier, vertical * verticalForceModifier);
     }

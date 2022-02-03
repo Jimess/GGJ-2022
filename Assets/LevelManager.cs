@@ -13,6 +13,7 @@ public class LevelManager : Singleton<LevelManager>
 
     private void Start() {
         playerPrefab.transform.position = spawnLocation.transform.position;
+        Application.targetFrameRate = 60;
 
         //ir paleisti kitus menedzerius jei reikia (PVZ.: progressManager)
         // ProgressManager.Instance.StartCalculatingDistance()
